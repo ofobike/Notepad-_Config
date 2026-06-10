@@ -1,7 +1,7 @@
 # Notepad++ 个人开发环境配置
 
 > 一套开箱即用的 Notepad++ 开发配置，适用于日常编码、SQL 开发、JSON/XML 处理。
-> 支持一键部署到新电脑，告别重复配置。
+> 整合了 GitHub 上高星项目的最佳实践，支持一键部署到新电脑。
 
 **适用版本**：Notepad++ 8.x+ （64位）
 
@@ -15,6 +15,8 @@
 - [开发功能](#-开发功能)
 - [备份策略](#-备份策略)
 - [推荐插件](#-推荐插件)
+- [热门主题推荐](#-热门主题推荐)
+- [GitHub 优秀配置参考](#-github-优秀配置参考)
 - [新电脑部署](#-新电脑部署)
 - [同步更新](#-同步更新)
 - [常见问题](#-常见问题)
@@ -68,6 +70,8 @@ Write-Output "✅ 配置完成！请打开 Notepad++ 并安装推荐插件。"
 | 非打印字符 | 显示 | **隐藏** | 隐藏不可见控制字符 |
 | 自动换行 | 关闭 | **开启** | 长行自动折行，无需横向滚动 |
 | 光标宽度 | 2px | **3px** | 光标更明显，快速定位当前位置 |
+| 双击关闭标签 | 关闭 | **开启** | 双击标签页直接关闭文件 |
+| 文件变更检测 | 关闭 | **开启** | 文件被外部程序修改时提示刷新 |
 | 行号 | 显示 | 保持 | 方便调试定位 |
 | 缩进参考线 | 显示 | 保持 | 可视化缩进层级 |
 | Tab 设置 | - | 4 空格 | Tab 键输入 4 个空格，保持代码风格一致 |
@@ -81,7 +85,7 @@ Write-Output "✅ 配置完成！请打开 Notepad++ 并安装推荐插件。"
 | 功能 | 说明 |
 |------|------|
 | **自动补全** | 输入 2 个字符即触发补全提示，支持单词和函数补全 |
-| **括号自动配对** | 输入 `(` 自动补 `)`，支持 `()` `[]` `{}` `""` |
+| **括号自动配对** | 输入 `(` 自动补 `)`，支持 `()` `[]` `{}` `""` `''` |
 | **UTF-8 编码** | 新建文件默认 UTF-8 编码，避免中文乱码 |
 | **会话记忆** | 关闭 Notepad++ 后重新打开，自动恢复上次的文件和标签 |
 | **智能高亮** | 选中一个变量，同名变量自动高亮显示 |
@@ -116,11 +120,23 @@ Write-Output "✅ 配置完成！请打开 Notepad++ 并安装推荐插件。"
 
 菜单：**插件 → Plugin Admin → Available**
 
-| 插件 | 用途 | 快捷操作 |
-|------|------|----------|
-| **JSON Viewer** | JSON 格式化/压缩/验证 | 选中文本 → Plugins → JSON Viewer → Format JSON |
-| **ComparePlus** | 两个文件差异对比 | 打开两个文件 → Plugins → ComparePlus → Compare |
-| **XML Tools** | XML 格式化、校验、XPath 查询 | Plugins → XML Tools → Pretty Print |
+| 插件 | GitHub Stars | 用途 | 快捷操作 |
+|------|-------------|------|----------|
+| **JSON Viewer** | ⭐ 858 | JSON 格式化/压缩/验证 | 选中文本 → Plugins → JSON Viewer → Format JSON |
+| **ComparePlus** | ⭐ 1.2k | 两个文件差异对比 | 打开两个文件 → Plugins → ComparePlus → Compare |
+| **XML Tools** | - | XML 格式化、校验、XPath 查询 | Plugins → XML Tools → Pretty Print |
+
+### 进阶插件（按需安装）
+
+| 插件 | GitHub Stars | 用途 | 适用场景 |
+|------|-------------|------|----------|
+| **NppFTP** | ⭐ 340 | FTP/SFTP 远程文件编辑 | 直接编辑服务器上的文件 |
+| **CSVLint** | ⭐ 231 | CSV 语法高亮、校验、列检测 | 数据分析、CSV 处理 |
+| **JsonTools** | ⭐ 170 | JSON 查询、树视图、CSV 转换 | 复杂 JSON 处理 |
+| **nppopenai** | ⭐ 164 | ChatGPT 集成 | AI 辅助编码 |
+| **NppExec** | ⭐ 163 | 运行外部命令/脚本 | 在编辑器内执行命令 |
+| **BlitzSearch** | ⭐ 154 | 增强的文件内搜索 | 大项目快速搜索 |
+| **Markdown++** | ⭐ 1.6k | Markdown 语法高亮 | Markdown 编辑 |
 
 ### 已内置功能（无需安装）
 
@@ -130,7 +146,7 @@ Write-Output "✅ 配置完成！请打开 Notepad++ 并安装推荐插件。"
 | **列编辑** | Alt + 鼠标选择 | 矩形选择，批量编辑 |
 | **宏录制** | 宏 → 开始录制 | 录制重复操作，一键回放 |
 
-### 其他已有插件
+### 已有插件
 
 | 插件 | 说明 |
 |------|------|
@@ -138,6 +154,83 @@ Write-Output "✅ 配置完成！请打开 Notepad++ 并安装推荐插件。"
 | NppExport | 导出带语法高格的 RTF/HTML 代码 |
 | NppConverter | 编码转换工具 |
 | mimeTools | MIME 编解码工具 |
+
+---
+
+## 🎨 热门主题推荐
+
+以下主题来自 GitHub 高星项目，可通过 Plugin Admin 或手动安装：
+
+### 暗色主题
+
+| 主题 | GitHub Stars | 风格 | 安装方式 |
+|------|-------------|------|----------|
+| **Dracula** | ⭐ 359 | 经典紫色暗色主题 | [dracula/notepad-plus-plus](https://github.com/dracula/notepad-plus-plus) |
+| **Dark+ Modern** | ⭐ 295 | VS Code 风格暗色主题 | [helldio/npp-Dark-Modern](https://github.com/helldio/npp-Dark-Modern) |
+| **VS2012 Dark** | ⭐ 264 | Visual Studio 暗色主题 | [SeanCline/Npp-VS2012-Dark](https://github.com/SeanCline/Npp-VS2012-Dark) |
+| **Darcula** | ⭐ 131 | JetBrains 风格暗色主题 | [bsobol/npp-darcula](https://github.com/bsobol/npp-darcula) |
+| **Material Theme** | ⭐ 131 | Material Design 风格 | [Codextor/npp-material-theme](https://github.com/Codextor/npp-material-theme) |
+| **Catppuccin Mocha** | ⭐ 167 | 柔和暗色主题 | [catppuccin/notepad-plus-plus](https://github.com/catppuccin/notepad-plus-plus) |
+
+### 亮色主题
+
+| 主题 | GitHub Stars | 风格 | 安装方式 |
+|------|-------------|------|----------|
+| **Catppuccin Latte** | ⭐ 167 | 柔和亮色主题 | [catppuccin/notepad-plus-plus](https://github.com/catppuccin/notepad-plus-plus) |
+| **Dust Light** | - | 简洁亮色主题 | Notepad++ 官方主题库 |
+
+### 主题安装方法
+
+**方法一：手动安装（推荐）**
+1. 从 GitHub 下载主题 `.xml` 文件
+2. 复制到 `%APPDATA%\Notepad++\themes\`
+3. 重启 Notepad++
+4. **设置 → 语言格式设置 → 选择主题**
+
+**方法二：通过 Plugin Admin**
+- 部分主题可通过 Plugin Admin 搜索安装
+
+---
+
+## 📚 GitHub 优秀配置参考
+
+以下是 GitHub 上值得关注的 Notepad++ 相关项目：
+
+### 官方仓库
+
+| 仓库 | Stars | 说明 |
+|------|-------|------|
+| [notepad-plus-plus/notepad-plus-plus](https://github.com/notepad-plus-plus/notepad-plus-plus) | ⭐ 28.3k | Notepad++ 官方源码 |
+| [notepad-plus-plus/nppPluginList](https://github.com/notepad-plus-plus/nppPluginList) | ⭐ 1.6k | 官方插件目录（Plugin Admin 数据源） |
+| [notepad-plus-plus/nppThemes](https://github.com/notepad-plus-plus/nppThemes) | ⭐ 149 | 官方主题集合 |
+
+### 高星插件项目
+
+| 仓库 | Stars | 说明 |
+|------|-------|------|
+| [Edditoria/markdown-plus-plus](https://github.com/Edditoria/markdown-plus-plus) | ⭐ 1.6k | Markdown 语法高亮（支持 10 种主题） |
+| [pnedev/comparePlus](https://github.com/pnedev/comparePlus) | ⭐ 1.2k | 文件对比插件 |
+| [NPP-JSONViewer/JSON-Viewer](https://github.com/NPP-JSONViewer/JSON-Viewer) | ⭐ 858 | JSON 树视图插件 |
+| [ashkulz/NppFTP](https://github.com/ashkulz/NppFTP) | ⭐ 340 | FTP/SFTP 远程编辑 |
+| [BdR76/CSVLint](https://github.com/BdR76/CSVLint) | ⭐ 231 | CSV 处理插件 |
+| [Predelnik/DSpellCheck](https://github.com/Predelnik/DSpellCheck) | ⭐ 230 | 拼写检查插件 |
+| [molsonkiko/JsonToolsNppPlugin](https://github.com/molsonkiko/JsonToolsNppPlugin) | ⭐ 170 | JSON 工具插件 |
+| [Krazal/nppopenai](https://github.com/Krazal/nppopenai) | ⭐ 164 | ChatGPT 集成插件 |
+| [d0vgan/nppexec](https://github.com/d0vgan/nppexec) | ⭐ 163 | 命令执行插件 |
+| [Natestah/BlitzSearch](https://github.com/Natestah/BlitzSearch) | ⭐ 154 | 增强搜索插件 |
+| [dail8859/LuaScript](https://github.com/dail8859/LuaScript) | ⭐ 128 | Lua 脚本插件 |
+
+### 自动化配置
+
+| 仓库 | Stars | 说明 |
+|------|-------|------|
+| [JuanOrbegoso/Dotfiles-for-Windows-11](https://github.com/JuanOrbegoso/Dotfiles-for-Windows-11) | ⭐ 137 | Windows 11 开发环境一键配置（含 Notepad++） |
+
+### 社区洞察
+
+- 📌 **配置同步方案**：社区推荐使用 Git 管理 `%AppData%\Notepad++` 目录，或使用 Notepad++ 内置的云同步功能（设置 → 首选项 → 云）
+- 📌 **插件生态**：官方 Plugin List 仓库（1.6k stars）是插件目录的权威数据源
+- 📌 **主题碎片化**：主题生态分散在各个小仓库，没有统一的"awesome"列表
 
 ---
 
@@ -245,6 +338,14 @@ git pull
 ### Q: 备份目录路径不对？
 **设置 → 首选项 → 备份** → 修改"自定义备份目录"为你的实际路径
 
+### Q: 如何安装 GitHub 上的主题？
+1. 下载主题 `.xml` 文件
+2. 复制到 `%APPDATA%\Notepad++\themes\`
+3. 重启 Notepad++ → **设置 → 语言格式设置 → 选择主题**
+
+### Q: 如何启用云同步？
+**设置 → 首选项 → 云** → 选择 OneDrive/Google Drive/Dropbox 路径，配置文件会自动同步
+
 ---
 
 ## 📋 配置变更日志
@@ -252,6 +353,8 @@ git pull
 | 日期 | 变更内容 |
 |------|----------|
 | 2026-06-10 | 初始配置：关闭深色模式、隐藏符号显示、开启自动备份、安装开发插件 |
+| 2026-06-10 | 新增：双击关闭标签、文件变更检测、单引号自动配对 |
+| 2026-06-10 | 整理 GitHub 优秀配置：热门主题推荐、进阶插件列表、社区资源汇总 |
 
 ---
 
